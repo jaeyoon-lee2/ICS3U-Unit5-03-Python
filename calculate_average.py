@@ -57,29 +57,18 @@ def main():
     # this function gets base and height
 
     # input
-    first_mark = input("Enter your first period mark (integer): ")
-    second_mark = input("Enter your second period mark (integer): ")
-    third_mark = input("Enter your third period mark (integer): ")
-    fourth_mark = input("Enter your fourth period mark (integer): ")
+    first_mark = int(input("Enter your first period mark (integer): "))
+    second_mark = int(input("Enter your second period mark (integer): "))
+    third_mark = int(input("Enter your third period mark (integer): "))
+    fourth_mark = int(input("Enter your fourth period mark (integer): "))
 
-    try:
-        first_mark_int = int(first_mark)
-        second_mark_int = int(second_mark)
-        third_mark_int = int(third_mark)
-        fourth_mark_int = int(fourth_mark)
+    # call functions
+    average = calculate_average(first_mark, second_mark, third_mark,
+                                fourth_mark)
+    level = grade_level(average)
 
-        # call functions
-        average = calculate_average(first_mark_int, second_mark_int,
-                                    third_mark_int, fourth_mark_int)
-        level = grade_level(average)
-
-        # output
-        print("Your middle mark is {0}% and level is {1}"
-              .format(average, level))
-    except Exception:
-        print("Theses are not integers")
-    finally:
-        print("Thanks for playing")
+    # output
+    print("Your middle mark is {0}% and level is {1}".format(average, level))
 
 
 if __name__ == "__main__":
